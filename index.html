@@ -1,11 +1,33 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>青岛云归谷科技有限公司</title>
-</head>
-<body>
-  <div id="root"></div>
-</body>
-</html>
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App';
+import './styles/main.css';
+
+// 添加错误处理
+window.addEventListener('error', (e) => {
+  console.error('Global error:', e.error);
+});
+
+try {
+  const rootElement = document.getElementById('root');
+  if (rootElement) {
+    // 清除加载提示
+    rootElement.innerHTML = '';
+    
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
+      <React.StrictMode>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </React.StrictMode>
+    );
+  } else {
+    console.error('Root element not found');
+  }
+} catch (error) {
+  console.error('Error initializing React app:', error);
+  // 显示错误信息
+  document.getElementById('root').innerHTML = '<div style="padding: 20px; color: red;">应用启动失败: ' + error.message + '</div>';
+}
