@@ -47,9 +47,16 @@ module.exports = {
   <meta name="description" content="青岛云归谷科技有限公司专注于能源管理与碳减排技术，提供AI驱动的能源管理系统、能碳管理系统及AI场景优化解决方案">
   <meta name="keywords" content="青岛云归谷科技, 能源管理, 碳减排, AI优化, 能源管理系统">
   <meta name="author" content="青岛云归谷科技有限公司">
+  <style>
+    body { margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; }
+    #root { min-height: 100vh; }
+    .loading { display: flex; justify-content: center; align-items: center; height: 100vh; font-size: 18px; }
+  </style>
 </head>
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <div class="loading">正在加载中...</div>
+  </div>
 </body>
 </html>
       `
