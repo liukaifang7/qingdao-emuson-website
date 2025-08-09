@@ -1,0 +1,38 @@
+{
+  "name": "emuson-website",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "vercel-build": "webpack --mode production",
+    "dev": "webpack serve --mode development --open"
+  },
+  "keywords": ["energy-management", "carbon-reduction", "AI-solutions", "emuson"],
+  "author": "青岛云归谷科技有限公司",
+  "license": "ISC",
+  "dependencies": {
+    "chart.js": "^4.5.0",
+    "framer-motion": "^11.2.12",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-lazy-load-image-component": "^1.6.3",
+    "react-router-dom": "^6.23.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "babel-loader": "^10.0.0",
+    "css-loader": "^7.1.2",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.101.0",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.2"
+  },
+  "description": "青岛云归谷科技有限公司官方网站 - AI驱动的能源管理与碳减排解决方案 - 优化版本 v1.0.1",
+  "engines": {
+    "node": "20.x"
+  }
+}
