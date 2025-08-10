@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: /sitemap.xml
+# Sitemaps for multiple search engines
+Sitemap: https://emuson.cn/sitemap.xml
+Sitemap: https://emuson.cn/sitemap-google.xml
+Sitemap: https://emuson.cn/sitemap-bing.xml
 
 # Disallow admin or private areas
 Disallow: /admin/
@@ -16,4 +18,40 @@ Allow: /images/
 Allow: /assets/
 
 # Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Additional search engine optimizations
+# Baidu
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# 360 Search
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 1
+
+# Sogou
+User-agent: Sogou
+Allow: /
+Crawl-delay: 1
+
+# UC Browser
+User-agent: UCBrowser
+Allow: /
+Crawl-delay: 1
+
+# Mobile crawlers
+User-agent: *
+Allow: /
 Crawl-delay: 1

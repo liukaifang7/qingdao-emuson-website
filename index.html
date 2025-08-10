@@ -18,6 +18,19 @@
   <meta name="wechat-title" content="青岛云归谷科技有限公司 - 云智能源 · 数碳未来">
   <meta name="wechat-desc" content="AI驱动的能源管理与碳足迹全链路解决方案提供商,助力企业实现数字化转型和碳中和目标">
   <meta name="wechat-img" content="/og-image.jpg">
+  
+  <!-- 搜索引擎验证代码 -->
+  <!-- 百度站长平台验证 -->
+  <meta name="baidu-site-verification" content="YOUR_BAIDU_VERIFY_CODE" />
+  
+  <!-- Google Search Console验证 -->
+  <meta name="google-site-verification" content="YOUR_GOOGLE_VERIFY_CODE" />
+  
+  <!-- 360搜索验证 -->
+  <meta name="360-site-verification" content="YOUR_360_VERIFY_CODE" />
+  
+  <!-- 搜狗搜索验证 -->
+  <meta name="sogou-site-verification" content="YOUR_SOGOU_VERIFY_CODE" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/manifest.json" />
@@ -43,12 +56,19 @@
   <meta name="geo.position" content="36.0671;120.3826">
   <meta name="ICBM" content="36.0671, 120.3826">
   
+  <!-- 多语言支持 -->
+  <meta name="language" content="zh-CN">
+  <meta name="availableLanguages" content="zh-CN,en">
+  <link rel="alternate" hreflang="zh-CN" href="https://emuson.cn/">
+  <link rel="alternate" hreflang="en" href="https://emuson.cn/en/">
+  <link rel="alternate" hreflang="x-default" href="https://emuson.cn/">
+  
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="">
+  <meta property="og:url" content="https://emuson.cn">
   <meta property="og:title" content="青岛云归谷科技有限公司 - 云智能源 · 数碳未来">
   <meta property="og:description" content="AI驱动的能源管理与碳足迹全链路解决方案提供商,助力企业实现数字化转型和碳中和目标">
-  <meta property="og:image" content="/og-image.jpg">
+  <meta property="og:image" content="https://emuson.cn/og-image.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:site_name" content="青岛云归谷科技有限公司">
@@ -56,10 +76,10 @@
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="">
+  <meta property="twitter:url" content="https://emuson.cn">
   <meta property="twitter:title" content="青岛云归谷科技有限公司 - 云智能源 · 数碳未来">
   <meta property="twitter:description" content="AI驱动的能源管理与碳足迹全链路解决方案提供商">
-  <meta property="twitter:image" content="/og-image.jpg">
+  <meta property="twitter:image" content="https://emuson.cn/og-image.jpg">
   
   <!-- 结构化数据 -->
   <script type="application/ld+json">
@@ -67,8 +87,8 @@
     "@context": "https://schema.org",
     "@type": "Organization",
          "name": "青岛云归谷科技有限公司",
-     "url": "",
-     "logo": "/favicon.svg",
+     "url": "https://emuson.cn",
+     "logo": "https://emuson.cn/favicon.svg",
     "description": "AI驱动的能源管理与碳减排技术解决方案提供商",
     "address": {
       "@type": "PostalAddress",
@@ -96,28 +116,51 @@
   <!-- 预加载关键资源 -->
   <link rel="preload" href="/favicon.ico" as="image">
   
-  <!-- 微信浏览器检测和优化 -->
+  <!-- 多浏览器检测和优化 -->
   <script>
-    // 检测是否为微信内置浏览器
-    function isWeChat() {
+    // 检测浏览器类型
+    function detectBrowser() {
       const ua = navigator.userAgent.toLowerCase();
-      return ua.indexOf('micromessenger') > -1;
+      const browsers = {
+        wechat: ua.indexOf('micromessenger') > -1,
+        uc: ua.indexOf('ucbrowser') > -1 || ua.indexOf('ucweb') > -1,
+        baidu: ua.indexOf('baidubrowser') > -1,
+        sogou: ua.indexOf('sogou') > -1,
+        qq: ua.indexOf('qqbrowser') > -1,
+        chrome: ua.indexOf('chrome') > -1,
+        safari: ua.indexOf('safari') > -1 && ua.indexOf('chrome') === -1,
+        firefox: ua.indexOf('firefox') > -1,
+        edge: ua.indexOf('edge') > -1
+      };
+      return browsers;
     }
     
+    const currentBrowser = detectBrowser();
+    
     // 微信浏览器优化
-    if (isWeChat()) {
-      // 设置微信浏览器的特殊配置
+    if (currentBrowser.wechat) {
       document.documentElement.style.fontSize = '16px';
-      
-      // 禁用微信浏览器的默认行为
       document.addEventListener('WeixinJSBridgeReady', function() {
         WeixinJSBridge.call('hideOptionMenu');
         WeixinJSBridge.call('hideToolbar');
       });
-      
-      // 优化触摸事件
-      document.addEventListener('touchstart', function() {}, {passive: true});
-      document.addEventListener('touchmove', function() {}, {passive: true});
+    }
+    
+    // UC浏览器优化
+    if (currentBrowser.uc) {
+      document.documentElement.style.webkitOverflowScrolling = 'touch';
+      document.documentElement.style.fontSize = '16px';
+    }
+    
+    // 通用触摸事件优化
+    document.addEventListener('touchstart', function() {}, {passive: true});
+    document.addEventListener('touchmove', function() {}, {passive: true});
+    document.addEventListener('touchend', function() {}, {passive: true});
+    
+    // 浏览器兼容性优化
+    if (currentBrowser.baidu || currentBrowser.sogou || currentBrowser.qq) {
+      // 国产浏览器特殊优化
+      document.documentElement.style.fontSize = '16px';
     }
     
     // 动态设置当前域名
