@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import PerformanceMonitor from './components/PerformanceMonitor';
 import CustomerService from './components/CustomerService';
+import WeChatOptimizer from './components/WeChatOptimizer';
 
 // 懒加载组件 - 按需加载
 const ContactPage = lazy(() => import('./pages/ContactPage'));
@@ -19,10 +20,11 @@ const NotFound = lazy(() => import('./components/NotFound'));
 function App() {
   try {
     return (
-      <div className="app-container">
-        <PerformanceMonitor />
-        <Navbar />
-        <CustomerService />
+      <WeChatOptimizer>
+        <div className="app-container">
+          <PerformanceMonitor />
+          <Navbar />
+          <CustomerService />
         
         <Suspense fallback={
           <div style={{
@@ -106,7 +108,8 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
-      </div>
+        </div>
+      </WeChatOptimizer>
     );
   } catch (error) {
     return (

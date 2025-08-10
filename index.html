@@ -2,8 +2,22 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>青岛云归谷科技有限公司 - 云智能源 · 数碳未来 | AI驱动的能源管理与碳减排解决方案</title>
+  
+  <!-- 微信浏览器优化 -->
+  <meta name="format-detection" content="telephone=no,email=no,address=no">
+  <meta name="wap-font-scale" content="no">
+  <meta name="browsermode" content="application">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="x5-page-mode" content="app">
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <!-- 微信分享优化 -->
+  <meta name="wechat-title" content="青岛云归谷科技有限公司 - 云智能源 · 数碳未来">
+  <meta name="wechat-desc" content="AI驱动的能源管理与碳足迹全链路解决方案提供商,助力企业实现数字化转型和碳中和目标">
+  <meta name="wechat-img" content="/og-image.jpg">
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="alternate icon" href="/favicon.ico" />
   <link rel="manifest" href="/manifest.json" />
@@ -82,8 +96,30 @@
   <!-- 预加载关键资源 -->
   <link rel="preload" href="/favicon.ico" as="image">
   
-  <!-- 动态设置域名 -->
+  <!-- 微信浏览器检测和优化 -->
   <script>
+    // 检测是否为微信内置浏览器
+    function isWeChat() {
+      const ua = navigator.userAgent.toLowerCase();
+      return ua.indexOf('micromessenger') > -1;
+    }
+    
+    // 微信浏览器优化
+    if (isWeChat()) {
+      // 设置微信浏览器的特殊配置
+      document.documentElement.style.fontSize = '16px';
+      
+      // 禁用微信浏览器的默认行为
+      document.addEventListener('WeixinJSBridgeReady', function() {
+        WeixinJSBridge.call('hideOptionMenu');
+        WeixinJSBridge.call('hideToolbar');
+      });
+      
+      // 优化触摸事件
+      document.addEventListener('touchstart', function() {}, {passive: true});
+      document.addEventListener('touchmove', function() {}, {passive: true});
+    }
+    
     // 动态设置当前域名
     const currentDomain = window.location.origin;
     const currentUrl = window.location.href;

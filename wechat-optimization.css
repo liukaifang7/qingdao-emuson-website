@@ -1,0 +1,127 @@
+/* 微信浏览器专用优化样式 */
+
+/* 微信浏览器字体大小优化 */
+.wechat-browser {
+  font-size: 16px !important;
+  -webkit-text-size-adjust: 100% !important;
+  -ms-text-size-adjust: 100% !important;
+}
+
+/* 微信浏览器触摸优化 */
+.wechat-browser * {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* 微信浏览器滚动优化 */
+.wechat-browser {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+}
+
+/* 微信浏览器图片优化 */
+.wechat-browser img {
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+/* 微信浏览器按钮优化 */
+.wechat-browser button,
+.wechat-browser .btn {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  outline: none;
+}
+
+/* 微信浏览器输入框优化 */
+.wechat-browser input,
+.wechat-browser textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0;
+  outline: none;
+  font-size: 16px !important; /* 防止iOS缩放 */
+}
+
+/* 微信浏览器链接优化 */
+.wechat-browser a {
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+}
+
+/* 微信浏览器动画优化 */
+.wechat-browser .animate,
+.wechat-browser .transition {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* 微信浏览器固定定位优化 */
+.wechat-browser .fixed,
+.wechat-browser .sticky {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* 微信浏览器阴影优化 */
+.wechat-browser .shadow {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+/* 微信浏览器渐变优化 */
+.wechat-browser .gradient {
+  background: #f0f0f0 !important;
+}
+
+/* 微信浏览器响应式优化 */
+@media screen and (max-width: 768px) {
+  .wechat-browser {
+    font-size: 14px !important;
+  }
+  
+  .wechat-browser h1 {
+    font-size: 24px !important;
+  }
+  
+  .wechat-browser h2 {
+    font-size: 20px !important;
+  }
+  
+  .wechat-browser h3 {
+    font-size: 18px !important;
+  }
+}
+
+/* 微信浏览器加载状态优化 */
+.wechat-browser .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  font-size: 16px;
+  color: #666;
+}
+
+/* 微信浏览器错误状态优化 */
+.wechat-browser .error {
+  text-align: center;
+  padding: 20px;
+  color: #ff4444;
+  font-size: 16px;
+}
+
+/* 微信浏览器成功状态优化 */
+.wechat-browser .success {
+  text-align: center;
+  padding: 20px;
+  color: #00aa00;
+  font-size: 16px;
+}
