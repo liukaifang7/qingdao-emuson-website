@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>百度站长平台验证</title>
+</head>
+<body>
+    <!-- 百度站长平台验证代码 -->
+    <!-- 请将以下代码中的 "YOUR_VERIFY_CODE" 替换为百度站长平台提供的实际验证码 -->
+    <script>
+        // 百度站长平台验证代码
+        // 请登录 https://ziyuan.baidu.com/ 获取验证码
+        console.log('百度站长平台验证文件已加载');
+        
+        // 百度统计代码（请替换为您的实际统计ID）
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?YOUR_BAIDU_SITE_ID";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 百度站长平台验证标签 -->
+    <meta name="baidu-site-verification" content="YOUR_VERIFY_CODE" />
+    
+    <p>百度站长平台验证文件</p>
+    <p>请访问 <a href="https://ziyuan.baidu.com/" target="_blank">百度站长平台</a> 获取验证码</p>
+</body>
+</html>
